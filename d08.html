@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype原型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var v="hi";
+			String.prototype.rpt=function(n)
+			{
+				n=n||2;
+				var temp="";
+				for(var i=0;i<n;i++) temp+=this;
+				return temp;
+			}
+			
+			console.log(v.rpt());
+			console.log(v.rpt(10));
+		</script>
+	</body>
+</html>

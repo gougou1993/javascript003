@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function Foo(a, b, c) {  //Foo这个构造函数由Function构造，函数也是对象
+				return a * b * c;
+			}
+			
+			var f1=new Foo();   //f1由Foo构造，Foo是一个构造函数，可以理解为类
+			
+			console.log(Foo.length);   //参数个数 3
+			console.log(typeof Foo.constructor);  //function
+			console.log(typeof Foo.call);  //function
+			console.log(typeof Foo.apply);  //function
+			console.log(typeof Foo.prototype);  //object object
+			
+		</script>
+	</body>
+
+</html>

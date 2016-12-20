@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var name="lucy";
+			this.name="Mali";
+			function show()
+			{
+				//当obj1.view()时this就是obj1，obj2.view()时this就是obj2
+				console.log(this.name);
+				that=this;  //闭包
+				return function(){
+					console.log(that.name);  //这里的that指向的是外层函数调用时的对象
+				}
+			}
+			
+			var obj1={name:"jack",view:show};
+			obj1.view();
+			
+			var obj2={name:"mark",view:show};
+			var f1=obj2.view();
+			f1();			
+		</script>
+	</body>
+</html>

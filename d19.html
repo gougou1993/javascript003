@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 320px;
+				height: 320px;
+				background: url(img/phone.png) no-repeat transparent;
+				transition: all .5s;
+				border: 1px solid gray;
+				margin: 50px;
+			}
+			#div1:hover{
+				background-position: -20px 0;
+				box-shadow: 0 0 10px 10px rgba(0,0,0,.1);
+			}
+		</style>
+		<script type="text/javascript">
+			function add(x,y,z)
+			{
+				var array1=[].slice.call(arguments,0,3);
+				console.log(array1);
+				var array2=Array.prototype.slice.apply(arguments,[0,3]);
+				console.log(array2);
+			}
+			add(1,2,8,9,10);
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		     var str1="Hello";
+		     var str2=new String("Hello");
+		     
+			console.log(str1 instanceof String);   //string false
+			console.log(str2 instanceof String);  //object true
+			
+			console.log(1 instanceof Number); //false
+			
+			function Foo(){};
+			
+			var f1=new Foo();
+			console.log(f1 instanceof Foo);
+			
+			
+		</script>
+	</body>
+</html>

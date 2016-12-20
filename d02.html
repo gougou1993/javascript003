@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var name="tom";
+			console.log(this.name);	  //顶层对象，一般为window	
+			
+			function show()
+			{
+				console.log(this.name);  //顶层对象，一般为window
+				return function(){
+					console.log(this.name);  //顶层对象，一般为window，因为返回的是函数
+				}
+			}
+			
+			var f1=show();
+			f1();
+			
+		</script>
+	</body>
+</html>

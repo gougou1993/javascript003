@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function Foo() {};
+			var foo = new Foo();
+			//Foo为foo的构造函数，简单理解为类型
+			console.log(foo instanceof Foo); // true
+
+			//但是Function并不是foo的构造函数
+			console.log(foo instanceof Function); // false
+
+			//Function为Foo的构造函数
+			console.log(Foo instanceof Function); //true
+			
+			
+			//Function就是Function构建的
+			console.log(Function instanceof Function); //true 
+			//Function也是Object函数构建的
+			console.log(Function instanceof Object); //true 
+			//Object也是Function函数构建的
+			console.log(Object instanceof Function); //true 
+
+			function Foo() {};
+			var foo = new Foo();
+			//foo是Foo创建的
+			console.log(foo instanceof Foo); // true
+			console.log(foo instanceof Function); // false
+			console.log(foo instanceof Object); // true
+			console.log(Foo instanceof Function); // true
+			console.log(Foo instanceof Object); // true
+		</script>
+	</body>
+
+</html>

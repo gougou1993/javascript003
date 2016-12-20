@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function A() {this.x="x";};
+			var a=new A();
+			
+			function B() {this.y="y"};
+			B.prototype=a;
+			var b=new B();
+			
+			function C() {this.z="z"};
+			C.prototype=b;
+			var c=new C();
+			
+			console.log(c instanceof C);
+			console.log(c instanceof B);
+			console.log(c instanceof A);
+			console.log(c instanceof Object);
+			
+			console.log(c.x+","+c.y+","+c.z);
+		</script>
+	</body>
+
+</html>

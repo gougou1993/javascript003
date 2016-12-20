@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>prototype原型</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//修改函数对象的原型，为每个函数增加一个方法method，用于扩展
+			Function.prototype.method = function(name, fun) {
+				this.prototype[name] = fun;
+			}
+
+			String.method("hello", function() {
+				return "Hello " + this;
+			});
+			console.log("JavaScript".hello());
+			
+			function getFun()
+			{
+				return function(a,b){
+					console.log("fun");
+				}
+			}
+			
+			var f=getFun();
+			console.log(f.length);
+
+
+		</script>
+	</body>
+
+</html>

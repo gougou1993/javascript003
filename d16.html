@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var str1 = "Hello JavaScript";
+			console.log(str1.toUpperCase()); //传统的调用办法
+
+			var str2=String.prototype.toUpperCase.apply(str1); //通过原形直接调用
+			console.log(str2);
+			
+			var str3=String.prototype.toUpperCase.call(str1); //通过原形直接调用
+			console.log(str3);
+			
+			var array1=[2,3,5,7,8,9,10];
+			var array2=array1.slice(1,3);
+			console.log(array2);
+			
+			var slice=Array.prototype.slice;
+			console.log(slice.apply(array1,[1,3]));//通过原形直接调用
+			console.log(slice.call(array1,1,3));
+		</script>
+	</body>
+
+</html>

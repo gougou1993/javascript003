@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>this</title>
+	</head>
+	<body>
+		<input type="button" value="按钮A" class="btn"/>
+		<input type="button" value="按钮B" class="btn"/>
+		<input type="button" value="按钮C" class="btn"/>
+		<input type="button" value="按钮D" onclick="handler()"/>
+		<!--handler中的this指向window或顶层对象-->
+		<input type="button" value="按钮E" id="btnE"/>
+		<script type="text/javascript">
+			var buttons = document.querySelectorAll(".btn");
+			
+			for (var i=0;i<buttons.length;i++) {
+				//handler中的this指向按钮对象
+				buttons[i].onclick=handler;
+			}
+			
+			function handler(){
+					alert(this.value);
+			}
+			
+			//handler中的this指向btnE
+			document.getElementById("btnE").addEventListener("click",handler,false);
+		</script>
+	</body>
+</html>

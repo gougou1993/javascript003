@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		    //扩展String类型，增加trim方法用于删除字符串的首尾空格
+			String.prototype.trim=function()
+			{
+				return this.replace(/^\s+|\s+$/igm,'');
+			}
+			
+			console.log("[begin]"+"  Hello JavaScript  ".trim()+"[end]");
+			
+			//修改函数对象的原型，添加method方法，扩展所有的函数
+			Function.prototype.method=function(name,fun){
+				//如果当前扩展的函数的原型中不包含名称为name的对象
+				if(!this.prototype[name]){
+					//添加
+					this.prototype[name]=fun;
+				}
+			}
+			
+			String.method("show",function(){
+				console.log("输出："+this);
+			});
+			
+			"Hello".show();
+			"JavaScript".show();
+			
+		</script>
+	</body>
+</html>

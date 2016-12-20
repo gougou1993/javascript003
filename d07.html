@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>this</title>
+	</head>
+
+	<body>
+		<input type="button" value="按钮F的值" id="btnF" />
+		<input type="button" value="按钮G的值" id="btnG" onclick="app.show()"/>
+		<script type="text/javascript">
+		    value="window的值"
+			var app = {
+				value: "app的值",
+				show: function() {
+					alert(this.value); //如果show为事件，则this指向触发事件的对象
+				},
+				init: function() {
+					//handler中的this指向btnE
+					document.getElementById("btnF").addEventListener("click", this.show, false);
+				}
+			};
+			
+			app.show();   //"app的值"，show方法中的this指向app这个对象
+			app.init();     //init中的this指向谁app对象
+			
+			
+		</script>
+	</body>
+</html>
